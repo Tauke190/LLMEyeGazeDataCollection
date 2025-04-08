@@ -6,7 +6,7 @@ from flask_login import LoginManager # tracking authed users
 
 ################################################ Config ############################################################
 
-homedir = r"C:\Users\avina\OneDrive\Desktop\LLMEyeGazeTurkerExperiment"
+homedir = "/Users/avinash/Desktop/LLMEyeGazeDataCollection"
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245' # encoding
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///auth.db' # path to the dbms

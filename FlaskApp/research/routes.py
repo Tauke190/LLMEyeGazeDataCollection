@@ -13,7 +13,7 @@ from research.speech_recog_func import *
 from flask_login import login_user, current_user, logout_user, login_required # keep user logged in for the test
 
 
-homedir = "/home/ubuntu/FlaskApp"
+homedir = "/Users/avinash/Desktop/LLMEyeGazeDataCollection/FlaskApp"
 
 
 ############### Min size check #################
@@ -209,6 +209,20 @@ def response1():
         else:
             flash('Do the tests in order. Resumbissions are not allowed!', 'danger')
             return redirect(url_for('home'))
+
+
+@app.route("/expertresponse", methods=['GET'])
+def expertresponse():
+      # No login check, no responseCounter check
+      return render_template('expertresponse.html', title='Speech Analysis')
+
+@app.route("/noviceresponse1", methods=['GET'])
+def noviceresponse():
+      # No login check, no responseCounter check
+      return render_template('noviceresponse1.html', title='Speech Analysis')
+
+
+
 
 
 ############ Personal Question Route ################

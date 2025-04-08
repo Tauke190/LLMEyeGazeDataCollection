@@ -1,21 +1,28 @@
+
 {% extends "layout.html" %}
 {% block content %}
 
-
-    <center><h1 class="h2">Test your microphone</h1></center>
-
     <div class="border-top pt-3"></div>
 
-    <h3 class="h4">Instructions</h3>
+    <h5 class="h5">Instructions</h5>
 
     <p class="lead">
         <ul>
-            <li>Here, you are expected to read the text out loud.</li>
-            <li>Once you press the <b>Start Recording</b> button, you will be able to see the visualizer of your speech in real time.</li>
-            <li>Try to read the text as you normally would.</li>
-	    <li>Wait for 1-2 seconds after pressing the <b>Start Recording</b> button before proceeding to reading.</li>
-            <li>When you are satisfied with your recording, you may <b>Submit</b> it by clicking the appropriate button. Make sure you choose the correct recording, as you will <b>not</b> be able to resubmit.</li>
-            <li>Your speech will later be analyzed, and, if successful, you will be able to continue with the research.</li>
+            <li> You are given a recording </li>
+
+            <audio controls>
+                <source src="{{ url_for('static', filename='audio/testaudio.wav') }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+
+	        <li> Can you identify which symbol are they referring to ?</li>
+            <br>
+            <img src="{{ url_for('static', filename='img/wall_right.png') }}" width="800" 
+            height="350">
+            <!-- <img src="{{ url_for('static', filename='img/symbols_single/symbol1.png') }}" 
+            width="200" height="200" style="margin-left: 6%;"> -->
+
+
         </ul>
     </p>
 
@@ -24,13 +31,15 @@
 
 
     <div id="recordingsText">
+        <!-- <li>Once you press the <b>Start Recording</b> button, you will be able to see the visualizer of your speech in real-time.</li> -->
+       <div style="width: 300px; float:left"> </div>
 
-        <div style="width: 300px; float:left">
 
-            <center><h3 class="h2">Visualizer:</h3></center>
-            <br>
+       <h4 class="h4">Visualizer:</h>
+        <br>
 
-            <center><canvas class="visualizer" width = "300px" height="60px" style="border:1px solid #000000;"></canvas></center>
+
+           <canvas class="visualizer" width = "300px" height="60px" style="border:1px solid #000000;"></canvas>
 
             <br>
             <div id="controls">
@@ -38,6 +47,7 @@
 
                 <button id="stopButton" disabled class = "btn btn-warning">Stop</button>
             </div>
+
             <div id="formats" class="small text-muted">Format: start recording to see sample rate</div>
             <br>
 
@@ -49,18 +59,20 @@
 
         <div style="width: 65%; float:left; margin-left:5%">
             <div class="lead">
+		    <!-- <legend class="border-bottom mb-4 h2 text-danger" >Answer the question<br> (you need to say at least 100 words!):</legend> -->
 
-
-                <legend class="border-bottom mb-4 h2">Read aloud the text below.</legend>
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        If you're reading this right now, I want you to know that the fingerprints of a koala are so indistinguishable from humans that they have on occasion been confused at a crime scene.
-                    </li>
-                  </ul>
+                    <!-- <ul class="list-group">
+                        <li class="list-group-item">
+                            Beifly describe a time when you handled a challenging situation.
+                            <br>
+                            <i>How did you approach it? Whom did you ask for help? Is it resolved now?</i>
+                        </li>
+                      </ul> -->
+                <br>
+                <br>
             </div>
         </div>
     </div>
-
 
 
     <div id = "textOnSubmit" style="display: none;">
@@ -76,7 +88,7 @@
 
     <div id = "textOnComplete" style="display: none;">
         <ul class="list-group">
-            <a href="{{ url_for('response2') }}" class="list-group-item list-group-item-action list-group-item-success">Success! Click here to proceed!</a>
+            <a href="{{ url_for('response3') }}" class="list-group-item list-group-item-action list-group-item-success">Success! Click here to proceed!</a>
         </ul>
     </div>
 
@@ -95,8 +107,8 @@
 
     <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
     <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
-    <script src="/static/js/app.js"></script>
-
-
+    <script src="/static/js/app2.js"></script>
 
 {% endblock content %}
+
+
