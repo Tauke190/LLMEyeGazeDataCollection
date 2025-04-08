@@ -11,6 +11,8 @@ dist/
 
 lunin-speech-06d1ab331d95.json
 
+turkerapp-0d008c684f30.json
+
 # virtualenv
 env/
 env.sh
