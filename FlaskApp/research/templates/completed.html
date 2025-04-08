@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+  <center><h1 class="display-4">You have completed all tasks! Thank you!</h1></center>
+  <br><br>
+  <table class = "table">
+	  <tr class="table-success"><td><h4>Sumbit your key back to MTurk: {{ current_user.key}}</h4></td></tr>
+  </table>
+<!-- XXX: show completed time, ip and key? -->
+
+<br>
+<br>
+<br>
+
+<!-- Footer -->
+
+<footer class="page-footer font-small blue">
+  <div class="footer-copyright text-center py-3" style="width: 100%"> NYUAD Research.
+    <a href = "mailto: xlabsxyz@gmail.com">Report a bug.</a>
+  </div>
+
+</footer>
+<!-- Footer -->
+
+<br>
+<br>
+<br>
+{% endblock content %}

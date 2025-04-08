@@ -1,0 +1,56 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="content-section">
+    <form method="POST" action="">
+
+        <!-- hidden_tag used for security purpose -->
+        {{ form.hidden_tag() }}
+
+        <!-- The form to get the User Key -->
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Questionnaire Part 2</legend>
+
+
+            <legend class="blockquote">Over the <i>past 2 weeks</i>, how often have you been bothered by any of the following problems?</legend>
+
+            <br>
+            {% for field in form %}
+                {% if field.type == "RadioField" %}
+                    <div class="form-group">
+                            {{ field.label(class = "form-check-label lead", style="padding-bottom:4px;")}}
+                            <br>
+                            <!-- Display all the errors to the users -->
+                            {% if field.errors %}
+                            {{ field(class="form-check is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in field.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {% for subfield in field %}
+                                    {{ subfield }}
+                                    {{ subfield.label(style="padding-right:15px;") }}
+                                {% endfor %}
+
+                            {% endif %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </fieldset>
+
+
+
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+
+
+{% endblock content %}
+
+
+

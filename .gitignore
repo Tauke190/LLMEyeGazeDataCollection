@@ -1,0 +1,30 @@
+# python
+*.py[cod]
+__pycache__/
+.trashcode/
+
+# nodejs
+node_modules/
+
+# webpack
+dist/
+
+lunin-speech-06d1ab331d95.json
+
+# virtualenv
+env/
+env.sh
+venv/
+venv.sh
+
+# os
+.DS_Store
+Icon?
+
+# ide
+.vscode
+*.swp
+
+# log files
+*.log
+logger

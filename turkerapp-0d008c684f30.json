@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "turkerapp",
+  "private_key_id": "0d008c684f303a69a72abe224921b1385f596e06",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCrEg/A8ZbIe0LZ\nrcskcNNDi1cqrQfSmYBm94f1ASPQCCE0lz4i3/b5dvAIr4UU7jhhmIH0yHzr+80e\nJLkLCeam3FFJMS6SzfDuEqQVOOzJneUk296pAQ6ySqdUrmorVgcyNOgORCRwUs0A\neHJryx7uMIq69UpNSZpXLkDR0eIESE3voVgCmo/3LCDx2DLaCp7fD0R8xHtwkrLc\nCzcRnjRAQRr7JNGLzQjMUo8qUmROw39KO2tZLfsXjqfaTSjI7on3zLOYkVDpcWIt\nRyVpnBFmp0jya9BjCfHB8fss7Vxl3tiOsntKdZ1Vy1AS0BqarhwJkEXl51TGL1Zl\nBM8q4iZXAgMBAAECggEAUNc2Lp17/b2R98ATMWNH0rF0PayK99CmRwJOc09YlyRg\nXLPkHyLrWTQFdnVLVHrGlgg10XE052eUpNwBvd+t6chPeWEOez1qz3Zrp8PA0f4V\nnPdyHzdqtIJm1LOfZF9BA07RIny9I39ddQ12NM5GDZVO2c60kBVqJCytYPnn7tFc\nsZZXqsaTibuH0ucQ2rLSfj0LViFmdjtDTqDvld5p79gPEHlImzO99Z9yIW01brBz\n8NGRxzZ3nhGA9e9pHQn3S1/tLCV9ZywQmyXhKvdegQ63BM4kcLdr1TAnDpFavCta\nmYAGFTNmoEFghdPcTvsAEjm5EWgOl1srhPkVtMT1UQKBgQDv25RN43ujnhAq5mld\n3wddXaeqX1zwqcL875KvG3k6a2eaFG9wXVL8qcNeI26QKhx0K/1RvJaGD/dqu2Mg\ndRpoAC186IWr7GI0PsMswzTu0yZqiTvoZxscrKul04VbLorYm/3V0fQv8Mn0w/iV\n9TKlrivM2Vv/N45Ced1cV9cbdQKBgQC2lV+KgDZDlefSi+4IO2h0qeVMnnsxo29V\nB6GP4+jVaLaH0uI0sIg47QAKtvqnByCIZ5VJGh44Xmy+ICap6KRV5m9ZPT2sp2km\nKwkeUdpmxIcRVXRnsA02v/gVtgyFj0t6uaGv/ddpj9tG2QffnaKeRZ8RjG1xsx4a\nYabBv/4dGwKBgDhUSgTsupmXQlbA29fmy9T6bKjPUoVWaOt72+fxvMuic6c0y2MJ\nF7csqywNiCalLR9/QTOT5YnAcCuJrGLv/W6VNBmUhef1UK7SWoXFpkW8ItZ8Oix/\nIlfemUUNYtEiIgtyvu8bKoyjsNoht9yHxAgy2ih2l2tdgbRM6FaKboMNAoGADGcx\nSlNTXFv+l4rx7JU8j1BLR10suT6E/Z27F+8/jd/DJo7o1vN3DYbsDc5IULhnOVzw\nAztG+kVP1cqRVdF7+Gni/ojue6ATwIgD4o9k6r5G/qJzeee3vhRkYfUv/JKzae7a\nUP5Jd95R4wozQrmOpnnMSIDlnmewj9I6ZccJGCkCgYEAoTbIbM3HYgxMev8S9ijM\nQuSvnYucItPA+FRfbBQOHsVj9+rYVq6Iuu6Ok/HSXrm7ZUbUOkKpQyV3dTMCwCvm\nJqMqQTPISN77nkV0lIsre1lJsWkQ6aleQ+raffBdn1kZUPdLcwtCVhUYXWaoEGMX\nfnAJuEb+Q46q7tZwf8eRFXk=\n-----END PRIVATE KEY-----\n",
+  "client_email": "turkerlogin@turkerapp.iam.gserviceaccount.com",
+  "client_id": "118162364383953432628",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/turkerlogin%40turkerapp.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

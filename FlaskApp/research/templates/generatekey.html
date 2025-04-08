@@ -1,0 +1,18 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+
+<ul class="list-group">
+    <li class="list-group-item">
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4"> Copy this key and use it to Log in.</legend>
+        <ul class="list-group">
+            Key: <li class="list-group-item"> {{key}} </li>
+        </ul>
+        <br>
+        <a href="{{ url_for('login') }}" class="btn btn-outline-info">Login</a>
+    </fieldset></li>
+</ul>
+
+{% endblock content %}

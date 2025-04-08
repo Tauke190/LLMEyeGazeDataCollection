@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+
+            <!-- hidden_tag used for security purpose -->
+            {{ form.hidden_tag() }}
+
+            <!-- The form to get the User Key -->
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Authentication</legend>
+                <div class="form-group">
+                    {{ form.key.label( class = "form-control-label" )}}
+
+                    <!-- Display all the errors to the users -->
+                    {% if form.key.errors %}
+                        {{ form.key(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.key.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.key(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Don't have it? <a class="ml-2" href="{{ url_for('generatekey') }}">Get User Key</a>
+        </small>
+    </div>
+{% endblock content %}

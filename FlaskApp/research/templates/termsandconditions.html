@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div class = "home">
+  <center><h1>Consent Form</h1></center>
+  <div class="border-top pt-3"> </div>
+  <br>
+</div>
+
+<div class = "home">
+
+  You are invited to participate in a research study in human behavior and speech. This study is being conducted by researchers at New York University Abu Dhabi.
+
+  <br>
+  <br>
+
+  <b>What will I be asked to do and how much time will it take?</b> If you agree to take part in this study, you will be asked to complete (1) online speech recording tasks and (2) an online questionnaire about general wellbeing. The tasks will take you approximately 3 minutes to complete.
+  <br>
+  <br>
+  <b>Will being in this research study help me in any way?</b> The research will improve our understanding on how human speech is associated with general wellbeing. We hope that your participation in the study may provide more nuanced insights into how speech patterns convey feelings and emotions.
+  <br>
+  <br>
+  <b>Will any Personally Identifiable Information (PII) be collected?</b> Recordings of your speech will be collected to derive population level acoustic and linguistic patterns. We ask that you do <b>not</b> share personal information within the audio recordings <i>(such as names, address, location, etc. )</i>.
+  <br>
+  <br>
+  <b>What are my risks of being in this research study?</b> We believe there are minimal risks associated with this research study, however, a risk of breach of confidentiality always exists. Steps taken to protect personal information is described in the next section. Text/visual stimuli and surveys are not intended to elicit stress, however there is a risk they might illicit mild stress to a degree similar to a job interview. Should you feel uncomfortable, you are free to dis-engage from the task and study.
+  <br>
+  <br>
+  <b>How will my personal information be protected?</b> We have taken the following steps to protect your personal information: the online webplatform utilizes a Secure Socket Layer (SSL) for communication, data collected will be stored on secure data infrastructure, analysis will be performed and presented on the aggregate of collected data. Audio recordings may be used in future research or shared with other researchers, however identifiable information <i>within</i> the audio recordings, if any, will be de-identified to remove personal information. Other information, not containing personal identifiers, may be used in future research or shared with other researchers.
+  <br>
+  <br>
+
+  <b>Will I be given any money or other compensation for being in this research study?</b> After completing the tasks in this study and submitting a key to validate your participation, you will be compensated for your participation according to the pre-defined amount presented to you <i>(if any)</i> on the page advertizing this study. You will be compensated in approximately 3 working days after submission of your study responses, and once the quality of submission has been verified.
+  <br>
+  <br>
+  <b>What happens if I say yes, but I change my mind later?</b> Your participation in this study is voluntary. If you agree to be in the study, but later change your mind, you may drop out at any time.
+  <br>
+  <br>
+  <b>Who can I talk to if I have questions?</b> If you have questions about this study or if you have a research-related problem, you may contact the researcher(s) at: <a href = "mailto: xlabsxyz@gmail.com">xlabsxyz@gmail.com</a>
+
+  <br>
+  <br>
+  <b>By clicking “I agree” below you are indicating that you are at least 18 years old, have read this consent form and agree to participate in this research study. You are free to drop out at any time.</b>
+
+
+  <br>
+  <br>
+
+  <center><a href="{{ url_for('generatekey') }}" class="btn-lg btn btn-outline-dark" role="button" aria-pressed="true">I agree. Get my User key.</a><center>
+
+  <br>
+  <br>
+  <br>
+
+</div>
+{% endblock content %}

@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+  <div class = "home">
+  <center><h1 class="display-4">Welcome to the Speech Research Project!</h1></center>
+
+</div>
+
+  <!-- <center><img src="https://www.kcl.ac.uk/newimages/nmpc/main-article/friends-and-family-test-780x450.xd2aac6c8.png" alt="Italian Trulli"></center> -->
+
+  <div class = "home">
+
+  <br>
+  <p class="lead">
+    You are invited to participate in a research study in human behavior and speech. This study is being conducted by researchers at New York University Abu Dhabi. <br>
+    It should not take you longer than 3 minutes to complete.
+  </p>
+
+  <div class="border-top pt-3"> </div>
+
+  <p class="lead">
+    To take part in the project you will need a working <b>microphone</b> and <b>Chrome</b> browser.
+    <small class="text-muted"> <i>(We will provide you with a tool to check your microphone later)</i></small>
+  </p>
+
+
+  <div class="border-top pt-3"> </div>
+
+  <p class="lead">
+    The test will be simple on your part. You will have to
+    <ul class="lead">
+      <li>Agree with Terms and Conditions and get your unique <b>User Key</b>. You will use it to log in, we will use it to check your work.</li>
+      <li>Once you log in, you will be redirected to the <b>Speech Test</b> page. </li>
+      <li>Read the instructions carefully as you will not be able to redo the tasks.</li>
+      <li>You will need around 3-4 minutes to complete all tasks. However, if you exceed 20 minutes, your results will be discarded!</li>
+      <li>Good Luck!</li>
+    </ul>
+  </p>
+
+
+ <br>
+
+  <center><a href="{{ url_for('termsandconditions') }}" class="btn-lg btn btn-outline-dark" role="button" aria-pressed="true">Register</a><center>
+
+  <br>
+  <br>
+  <br>
+
+  <!-- Footer -->
+
+  <footer class="page-footer font-small blue">
+    <div class="footer-copyright text-center py-3" style="width: 100%"> NYUAD Research.
+      <a href = "mailto: xlabsxyz@gmail.com">Report a bug.</a>
+    </div>
+
+  </footer>
+  <!-- Footer -->
+
+  <br>
+  <br>
+  <br>
+
+</div>
+{% endblock content %}

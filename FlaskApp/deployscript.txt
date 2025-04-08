@@ -1,0 +1,30 @@
+# 1. Install libraries 
+sudo apt-get -y update && sudo apt-get -y upgrade 
+sudo apt-get -y install apache2 apache2-dev 
+sudo apt install python3
+sudo pip3 install virtualenv
+sudo apt install pip3
+echo "export PATH=\"/home/mark/.local/bin:\$PATH\"" >> ~/.bashrc && source ~/.bashrc
+sudo pip3 install virtualenv
+#2. clone the website 
+# 3. Configure WSGI 
+sudo pip3 install mod_wsgi 
+sudo bash -c 'mod_wsgi-express module-config > /etc/apache2/mods-available/wsgi.load' 
+sudo a2enmod wsgi 
+sudo service apache2 restart 
+virtualenv -p python3  
+source venv/bin/activate 
+sudo pip3 install flask 
+sudo pip3 install -r requirements.txt
+sudo chmod 777 /home/ubuntu/FlaskApp
+sudo chmod -R g+rwx /home/ubuntu/FlaskApp 
+
+
+sudo chown -R www-data:www-data /home/ubuntu/FlaskApp # Gives permission to all the directories!
+# Set relative paths??
+
+sudo chown -R www-data:www-data db_directory — in case directory is read-only # chmod 664 /home/ubuntu/FlaskApp DONT DO THIS # password: asdf
+
+
+
+# export Google API key

@@ -1,0 +1,107 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+
+    <center><h1 class="">Speech Analysis</h1></center>
+
+
+    <div class="border-top pt-3"></div>
+
+    <h3 class="h4">Instructions</h3>
+
+    <p class="lead">
+        <ul>
+            <li>Describe the image below in <b>5-6</b> sentences.</li>
+	    <li>Wait for 1-2 seconds after pressing the <b>Start Recording</b> button before proceeding to read.</li>
+            <li>Attempt to analyze the <b>mood</b> and the <b>emotional setting</b> of the picture apart from just describing the specific objects.</li>
+        </ul>
+    </p>
+
+    <div class="border-top pt-3"></div>
+    <br>
+
+
+    <div id="recordingsText">
+
+        <div style="width: 300px; float:left">
+
+
+            <center><h3 class="h2">Visualizer:</h></center>
+
+            <br>
+
+            <center><canvas class="visualizer" width = "300px" height="60px" style="border:1px solid #000000;"></canvas></center>
+
+            <br>
+            <div id="controls">
+                <button id="recordButton" class = "btn btn-primary"> Start Recording</button>
+
+                <button id="stopButton" disabled class = "btn btn-warning">Stop</button>
+            </div>
+            <div id="formats" class="small text-muted">Format: start recording to see sample rate</div>
+            <br>
+
+            <p><strong>Your Recordings:</strong></p>
+
+            <!-- Recordings list -->
+            <ol id="recordingsList"></ol>
+        </div>
+
+        <div style="width: 60%; float:left; padding-left:10%;">
+            <div class="lead">
+
+		    <legend class="border-bottom mb-4 h2 text-danger" style="width: 100%;">Describe the <b>mood</b> of the image. <br> You must say at least 100 words.</legend>
+                        <div>
+
+                            <div style="float:left; width:100%;">
+                                <img src="https://laurapickens.files.wordpress.com/2014/05/e0d39d3f11283af03747c1a1896c5333.jpg" alt="please reload and disable AdBlocker" width="100%">
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <div id = "textOnSubmit" style="display: none;">
+        <ul class="list-group">
+        <li class="list-group-item disabled">
+        <div class="d-flex align-items-center">
+            <div class="spinner-border m-5" role="status" aria-hidden="true"></div>
+            <strong>Uploading your response to the server. This might take a couple minutes...</strong>
+        </div></li>
+        </ul>
+    </div>
+
+
+    <div id = "textOnComplete" style="display: none;">
+        <ul class="list-group">
+            <a href="{{ url_for('response4') }}" class="list-group-item list-group-item-action list-group-item-success">Success! Click here to proceed!</a>
+        </ul>
+    </div>
+
+    <div id = "textOnFail" style="display: none;">
+        <ul class="list-group">
+            <a href="{{ url_for('home') }}" class="list-group-item list-group-item-action list-group-item-danger">Unfortunately your recording did not meet our requirements! You cannot continue! Please, create a new account and try again! Make sure your microphone is working and you are saying what is asked. </a>
+        </ul>
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+
+    <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="/static/js/app3.js"></script>
+
+
+
+{% endblock content %}
+
+

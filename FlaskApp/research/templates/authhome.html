@@ -1,0 +1,57 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+
+
+<center><h1 class="h2">Home</h1></center>
+
+
+<div class="border-top pt-3"></div>
+
+<h3 class="h4">Instructions</h3>
+
+<p class="lead">
+    <ul>
+        <li>Here is a list of questions that you have to complete in order.</li>
+        <li>Once the first response is accepted, you will have access to the other 3.</li>
+        <li>Please, complete all 4 sections at once as this is important for the outcome of the research.</li>
+        <li>If you failed any of the sections, you shall not continue.</li>
+    </ul>
+</p>
+
+<br>
+
+<h1 class="h4">Your tests</h1>
+
+<div style="width: 300px;">
+    <div class="border-top pt-3"></div>
+    <div class="list-group">
+        <a href="{{ url_for('response1') }}" class="list-group-item list-group-item-primary">1. Reading</a>
+        <a href="{{ url_for('response2') }}" class="list-group-item list-group-item-primary">2. Personal Question</a>
+        <a href="{{ url_for('response3') }}" class="list-group-item list-group-item-primary">3. Image Description</a>
+        <a href="{{ url_for('response4') }}" class="list-group-item list-group-item-primary">4. Questionnaire</a>
+    </div>
+</div>
+
+
+<br>
+<br>
+<br>
+
+<!-- Footer -->
+
+<footer class="page-footer font-small blue">
+<div class="footer-copyright text-center py-3" style="width: 100%"> NYUAD Research.
+    <a href = "mailto: xlabsxyz@gmail.com">Report a bug.</a>
+</div>
+
+</footer>
+<!-- Footer -->
+
+<br>
+<br>
+<br>
+
+
+{% endblock content %}

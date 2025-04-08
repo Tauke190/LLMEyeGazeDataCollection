@@ -1,0 +1,113 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+
+    <center><h1 class="">Speech Analysis</h1></center>
+
+
+    <div class="border-top pt-3"></div>
+
+    <h3 class="h4">Instructions</h3>
+
+    <p class="lead">
+        <ul>
+            <li>Here, you are expected to answer a personal question.</li>
+	    <li>We expect a personal story told in 5-6 sentences. It does not have to be recent; you may use fake names if needed.</li>
+            <li>Once you press the <b>Start Recording</b> button, you will be able to see the visualizer of your speech in real-time.</li>
+            <li>Try to speak as you normally would.</li>
+	    <li>Wait for 1-2 seconds after pressing the <b>Start Recording</b> button before proceeding to answer the question.</li>
+            <li>When you are satisfied with your recording, you may <b>Submit</b> it by clicking the appropriate button. Make sure you choose the correct recording, as you will <b>not</b> be able to resubmit.</li>
+        </ul>
+    </p>
+
+    <div class="border-top pt-3"></div>
+    <br>
+
+
+    <div id="recordingsText">
+
+        <div style="width: 300px; float:left">
+
+
+            <center><h3 class="h2">Visualizer:</h></center>
+
+            <br>
+
+            <center><canvas class="visualizer" width = "300px" height="60px" style="border:1px solid #000000;"></canvas></center>
+
+            <br>
+            <div id="controls">
+                <button id="recordButton" class = "btn btn-primary"> Start Recording</button>
+
+                <button id="stopButton" disabled class = "btn btn-warning">Stop</button>
+            </div>
+            <div id="formats" class="small text-muted">Format: start recording to see sample rate</div>
+            <br>
+
+            <p><strong>Your Recordings:</strong></p>
+
+            <!-- Recordings list -->
+            <ol id="recordingsList"></ol>
+        </div>
+
+        <div style="width: 65%; float:left; margin-left:5%">
+            <div class="lead">
+
+		    <legend class="border-bottom mb-4 h2 text-danger" >Answer the question<br> (you need to say at least 100 words!):</legend>
+
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            Beifly describe a time when you handled a challenging situation.
+                            <br>
+                            <i>How did you approach it? Whom did you ask for help? Is it resolved now?</i>
+                        </li>
+
+                      </ul>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id = "textOnSubmit" style="display: none;">
+        <ul class="list-group">
+        <li class="list-group-item disabled">
+        <div class="d-flex align-items-center">
+            <div class="spinner-border m-5" role="status" aria-hidden="true"></div>
+            <strong>Uploading your response to the server. This might take a couple minutes...</strong>
+        </div></li>
+        </ul>
+    </div>
+
+
+    <div id = "textOnComplete" style="display: none;">
+        <ul class="list-group">
+            <a href="{{ url_for('response3') }}" class="list-group-item list-group-item-action list-group-item-success">Success! Click here to proceed!</a>
+        </ul>
+    </div>
+
+
+    <div id = "textOnFail" style="display: none;">
+        <ul class="list-group">
+            <a href="{{ url_for('home') }}" class="list-group-item list-group-item-action list-group-item-danger">Unfortunately your recording did not meet our requirements! You cannot continue! Please, create a new account and try again! Make sure your microphone is working and you are saying what is asked. </a>
+        </ul>
+    </div>
+
+
+
+    <br>
+    <br>
+    <br>
+
+    <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="/static/js/app2.js"></script>
+
+
+
+{% endblock content %}
+
+
