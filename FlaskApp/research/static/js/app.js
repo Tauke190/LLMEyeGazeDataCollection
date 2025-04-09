@@ -206,8 +206,6 @@ function createDownloadLink(blob) {
 }
 
 
-
-
 // Visualizing the user recording in real time
 
 function visualize(stream) {
@@ -227,6 +225,8 @@ function visualize(stream) {
 
     draw()
 
+
+  
     function draw() {
       const WIDTH = canvas.width
       const HEIGHT = canvas.height;

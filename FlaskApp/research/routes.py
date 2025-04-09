@@ -216,10 +216,10 @@ def expertresponse():
       # No login check, no responseCounter check
       return render_template('expertresponse.html', title='Speech Analysis')
 
-@app.route("/noviceresponse1", methods=['GET'])
+@app.route("/noviceresponse", methods=['GET'])
 def noviceresponse():
       # No login check, no responseCounter check
-      return render_template('noviceresponse1.html', title='Speech Analysis')
+      return render_template('noviceresponse.html', title='Speech Analysis')
 
 
 

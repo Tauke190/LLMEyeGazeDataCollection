@@ -1,0 +1,161 @@
+<style>
+
+    #dropdownform {
+      margin-bottom: 20px;
+    }
+    #correctAnswer, #inCorrectAnswer {
+      display: none;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    #correctAnswer {
+      color: green;
+    }
+    #inCorrectAnswer {
+      color: red;
+    }
+    .follow-up {
+      margin-top: 15px;
+      color: black;
+      font-weight: normal;
+    }
+</style>
+
+<script>
+    function checkAnswer(event) {
+      event.preventDefault();
+
+      document.getElementById("dropdownform").style.display = "none";
+
+
+      const selectedValue = document.getElementById("numbers").value;
+      const correctAnswer = document.getElementById("correctAnswer");
+      const inCorrectAnswer = document.getElementById("inCorrectAnswer");
+
+      if (selectedValue === "5") {
+        correctAnswer.style.display = "block";
+        inCorrectAnswer.style.display = "none";
+      } else {
+        correctAnswer.style.display = "none";
+        inCorrectAnswer.style.display = "block";
+      }
+    }
+
+    function submitUnclearIntent() {
+    const inputText = document.getElementById("unclearIntent").value;
+    console.log("User input:", inputText);
+  }
+
+</script>
+  
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="border-top pt-3"></div>
+
+    <h5 class="h5">Instructions</h5>
+
+    <p class="lead">
+        <ul>
+            <li> You are given a recording </li>
+
+            <audio controls>
+                <source src="{{ url_for('static', filename='audio/testaudio.wav') }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+
+	        <li> Can you identify which symbol are they referring to ?</li>
+            
+            <br>
+            <img src="{{ url_for('static', filename='img/wall_right.png') }}" width="800" 
+            height="350">
+         
+            <h4>Select your answer from the dropdown :</h4>
+
+            <form id="dropdownform" onsubmit="checkAnswer(event)">
+                <label for="numbers">Choose the correct answer:</label>
+                <select id="numbers" name="numbers">
+                  <script>
+                    for (let i = 1; i <= 20; i++) {
+                      document.write(`<option value="${i}">${i}</option>`);
+                    }
+                  </script>
+                </select>
+                <br><br>
+                <input type="submit" value="Submit Answer">
+              </form>
+            
+         
+
+              <form id="correctAnswer" onsubmit="submitFollowUp(event)">
+                ✅ That's correct! Great job! 🎉
+            
+                <div class="follow-up">
+                  <p>1. How would you rate the clarity of the instruction?</p>
+                  <select id="clarityRating" name="clarityRating" required>
+                    <option value="">-- Select Rating --</option>
+                    <option value="1">1 - Very unclear</option>
+                    <option value="2">2 - Unclear</option>
+                    <option value="3">3 - Neutral</option>
+                    <option value="4">4 - Clear</option>
+                    <option value="5">5 - Very clear</option>
+                  </select>
+
+                  <br>
+                  <br>
+                  <p>2. Why did you choose this label?</p>
+                  <textarea id="clarityReason" name="clarityReason" rows="4" cols="50" placeholder="(Optional) Write your reason here..."></textarea>
+            
+                  <br><br>
+                  <input type="submit" value="Submit Feedback">
+                </div>
+              </form>
+
+
+
+              <div id="inCorrectAnswer">
+                <div id="inCorrectAnswer">
+                    ❌ Oops! That's not the right answer.
+                </div>
+
+                <label for="unclearIntent">Describe what was unclear about the intent:</label><br>
+                <textarea id="unclearIntent" name="unclearIntent" rows="4" style="width: 100%;"></textarea>
+                <button type="button" onclick="submitUnclearIntent()">Submit</button>
+
+              </div>
+
+
+        </ul>
+    </p>
+
+    <div class="border-top pt-3"></div>
+    <br>
+
+
+
+
+    <div id = "textOnComplete" style="display: none;">
+        <ul class="list-group">
+            <a href="{{ url_for('response3') }}" class="list-group-item list-group-item-action list-group-item-success">Success! Click here to proceed!</a>
+        </ul>
+    </div>
+
+
+    <div id = "textOnFail" style="display: none;">
+        <ul class="list-group">
+            <a href="{{ url_for('home') }}" class="list-group-item list-group-item-action list-group-item-danger">Unfortunately your recording did not meet our requirements! You cannot continue! Please, create a new account and try again! Make sure your microphone is working and you are saying what is asked. </a>
+        </ul>
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+
+    <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="/static/js/app2.js"></script>
+
+{% endblock content %}
+
+

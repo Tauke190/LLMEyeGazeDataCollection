@@ -1,19 +1,16 @@
 
 {% extends "layout.html" %}
 {% block content %}
-
-    <div class="border-top pt-3"></div>
-
     <h5 class="h5">Instructions</h5>
 
     <p class="lead">
         <ul>
             <li> Imagine that you are a expert that is teaching a novice user to located the symbol in the screen</li>
-	        <li> You will be given a symbol and you have to guide the user to locate that symbol in a collection of symbols</li>
+	        <li> You will be given a symbol on the right and you have to guide the user to locate that symbol in a collection of symbols</li>
             <li>Can you guide another user where the symbol on the right might be on the big image on the left by describing it via speech ?</li>
 
             <br>
-            <it><li>For eg : " Can you look at that symbol with the diagonal on the square ? </li></it>
+            <em><li>For eg : " Can you look at that symbol with the diagonal on the square ? </li></em>
             <br>
         
             <img src="{{ url_for('static', filename='img/wall_right.png') }}" width="800" 
